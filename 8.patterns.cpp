@@ -248,5 +248,66 @@ int main()
 
     cout << "\n";
 
+    // Pattern ------------------------------------------------ 10
+    /*
+    *      *
+    **    **
+    ***  ***
+    ********
+    ********
+    ***  ***
+    **    **
+    *      *
+    */
+
+    cout << "Pattern 10: \n";
+    // Top half
+    for (int i = 1; i <= n; i++)
+    {
+        // loop for stars on left
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        // loop for spaces in the middle
+        for (int j = 1; j <= 2 * (n - i); j++)
+        {
+            cout << " ";
+        }
+
+        // loop for stars on right
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
+    // Bottom half
+    for (int i = n; i >= 1; i--)
+    {
+        // loop for stars on left
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        // loop for spaces in the middle
+        for (int j = 1; j <= 2 * (n - i); j++)
+        {
+            cout << " ";
+        }
+
+        // loop for stars on right
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
     return 0;
 }
