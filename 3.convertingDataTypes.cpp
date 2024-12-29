@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     // There are two ways to covert data types
     // 1. Implicit Type Casting ( Type Conversion )
     // 2. Explicit Type Casting ( Type Casting )
@@ -18,7 +19,7 @@ int main() {
 
     // Implicit Type Casting Example
     char grade = 'A';
-    int value = grade; 
+    int value = grade;
     cout << value << endl; // 65
 
     // Explicit Type Casting Example
@@ -26,5 +27,4 @@ int main() {
     int newPrice = (int)price;
     cout << newPrice << endl; // 100
     // Note: In Explicit Type Casting, the data is not rounded off. It is simply truncated.
-
 }

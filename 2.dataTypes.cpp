@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
 
     // Pimitive Data Types
     // int
@@ -17,7 +18,7 @@ int main() {
 
     // printing the value of age variable
     cout << "My age is: " << age << " years old" << endl;
-    
+
     // char data type must store a single character in single quotes
     char grade = 'A'; // 1 byte
     cout << sizeof(grade) << endl;
@@ -30,6 +31,6 @@ int main() {
 
     // double data type is of double the size of float data type
     double gradePointAverage = 9.5; // 8 bytes
-    
+
     return 0;
 }
