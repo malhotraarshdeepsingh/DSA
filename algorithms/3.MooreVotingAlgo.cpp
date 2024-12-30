@@ -99,8 +99,10 @@ int majorityElementMoore(vector<int> nums)
             freq++;
     }
 
-    if (freq > nums.size() / 2) return majority;
-    else return -1; // majority element not found
+    if (freq > nums.size() / 2)
+        return majority;
+    else
+        return -1; // majority element not found
 }
 
 int main()
