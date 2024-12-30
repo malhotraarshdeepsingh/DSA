@@ -4,10 +4,12 @@
 #include <vector>
 using namespace std;
 
-int singleNumber(vector<int> &nums) {
+int singleNumber(vector<int> &nums)
+{
     int result = 0;
 
-    for (int num : nums) {
+    for (int num : nums)
+    {
         result ^= num;
     }
     // bitwise XOR will remove all duplicate values as there binary representation will be same and we will be left with the single number
@@ -15,7 +17,8 @@ int singleNumber(vector<int> &nums) {
     return result;
 }
 
-int main() {
+int main()
+{
     vector<int> nums = {4, 1, 2, 1, 2};
     cout << singleNumber(nums) << endl;
 

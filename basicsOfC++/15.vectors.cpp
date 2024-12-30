@@ -4,22 +4,23 @@ using namespace std;
 // Vector Header File
 #include <vector>
 
-int main() {
+int main()
+{
     // Vectos are array like data types in C++ which deffernce from array because they are dynamic in size
 
     // Method 1
-    vector<int> num1={1,2,3,4,5};
+    vector<int> num1 = {1, 2, 3, 4, 5};
 
     cout << "Vector size: " << num1.size() << endl;
     cout << "First element: " << num1[0] << endl;
-    cout << "Last element: " << num1[num1.size()-1] << endl;
+    cout << "Last element: " << num1[num1.size() - 1] << endl;
 
     // Method 2
     vector<int> num2(5, 10); // 5 elements with value 10
 
     cout << "Vector size: " << num2.size() << endl;
     cout << "First element: " << num2[0] << endl;
-    cout << "Last element: " << num2[num2.size()-1] << endl;
+    cout << "Last element: " << num2[num2.size() - 1] << endl;
 
     // Special loop for Vectors - for each loop iteration
     for (int i : num1)
@@ -27,7 +28,7 @@ int main() {
         cout << i << " ";
     }
 
-    // Vector Functions 
+    // Vector Functions
     // size - returns the number of elements in the vector
     // push_back - adds an element to the end of the vector
     // pop_back - removes the last element from the vector

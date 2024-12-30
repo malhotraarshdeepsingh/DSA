@@ -2,15 +2,18 @@
 #include <climits>
 using namespace std;
 
-void reverseArray(int arr[], int size) {
-    for (int i = 0; i < size / 2; i++) {
+void reverseArray(int arr[], int size)
+{
+    for (int i = 0; i < size / 2; i++)
+    {
         int temp = arr[i];
         arr[i] = arr[size - i - 1];
         arr[size - i - 1] = temp;
     }
 }
 
-int main() {
+int main()
+{
     int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     int max = arr[0], min = INT_MAX, secondMin = INT_MAX;
@@ -18,14 +21,19 @@ int main() {
     // secondMin is initialized with INT_MAX to ensure that it gets updated with the actual second minimum value.
 
     // loop to find max, min and second minimum values
-    for (int i = 0; i < 10; i++) {
-        if (arr[i] > max) {
+    for (int i = 0; i < 10; i++)
+    {
+        if (arr[i] > max)
+        {
             max = arr[i];
         }
-        if (arr[i] < min) {
+        if (arr[i] < min)
+        {
             secondMin = min;
             min = arr[i];
-        } else if (arr[i] < secondMin && arr[i] != min) {
+        }
+        else if (arr[i] < secondMin && arr[i] != min)
+        {
             secondMin = arr[i];
         }
     }
@@ -37,7 +45,8 @@ int main() {
     int size = sizeof(arr) / sizeof(arr[0]);
     reverseArray(arr, size);
     cout << "Reversed array: ";
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++)
+    {
         cout << arr[i] << " ";
     }
 
