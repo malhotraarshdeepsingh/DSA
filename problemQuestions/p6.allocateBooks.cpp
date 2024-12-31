@@ -13,18 +13,23 @@
 #include <algorithm>
 using namespace std;
 
-bool isValid(vector<int>& books, int students, int maxPages) {
+bool isValid(vector<int> &books, int students, int maxPages)
+{
     int currentSum = 0;
     int requiredStudents = 1;
 
-    for (int pages : books) {
-        if (currentSum + pages > maxPages) {
+    for (int pages : books)
+    {
+        if (currentSum + pages > maxPages)
+        {
             requiredStudents++;
             currentSum = pages;
 
             if (requiredStudents > students)
                 return false;
-        } else {
+        }
+        else
+        {
             currentSum += pages;
         }
     }
@@ -32,29 +37,36 @@ bool isValid(vector<int>& books, int students, int maxPages) {
     return true;
 }
 
-int allocateBooks(vector<int>& books, int students) {
+int allocateBooks(vector<int> &books, int students)
+{
     int n = books.size();
-    if (students > n) return -1;  
+    if (students > n)
+        return -1;
 
     int low = *max_element(books.begin(), books.end());
     int high = accumulate(books.begin(), books.end(), 0);
     int result = -1;
 
-    while (low <= high) {
+    while (low <= high)
+    {
         int mid = low + (high - low) / 2;
 
-        if (isValid(books, students, mid)) {
-            result = mid; 
-            high = mid - 1; 
-        } else {
-            low = mid + 1; 
+        if (isValid(books, students, mid))
+        {
+            result = mid;
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
         }
     }
 
     return result;
 }
 
-int main() {
+int main()
+{
     vector<int> books = {12, 34, 67, 90};
     int students = 2;
 

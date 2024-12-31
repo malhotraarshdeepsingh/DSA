@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     // A pointer is a variable that stores the memory address of another variable. It is a powerful feature in C/C++ that allows you to directly access and manipulate memory.
     // * --- Value at
     // & --- Address of
@@ -9,7 +10,7 @@ int main() {
     int a = 10;
     int *p = &a;
     int **q = &p;
-    
+
     cout << *p << "\n";
     cout << **q << "\n";
     cout << p << "\n";
@@ -35,18 +36,16 @@ int main() {
     // Returns the number of memory locations between p1 and p2 based on the data type they point to.
     cout << p - *q << "\n";
 
-
     // Pointers are used in various scenarios like dynamic memory allocation, arrays, functions, and data structures like linked lists, trees, graphs, etc.
     // Pointers are also used in low-level programming, system programming, and embedded systems where direct memory access is required.
 
-    int array[] = { 0, 1, 2, 3, 4, 5};
+    int array[] = {0, 1, 2, 3, 4, 5};
     int *z = array;
 
     cout << *(z + 4) << "\n";
     cout << z[4] << "\n";
     z++;
     cout << *z << "\n";
-
 
     return 0;
 }

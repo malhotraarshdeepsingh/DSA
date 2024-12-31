@@ -2,19 +2,26 @@
 using namespace std;
 
 // Binary search function for ascending sorted array
-int binarySearch(int arr[], int n, int target) {
+int binarySearch(int arr[], int n, int target)
+{
     int left = 0;
     int right = n - 1;
 
-    while (left <= right) {
+    while (left <= right)
+    {
         // optimized binary search
         int mid = left + (right - left) / 2;
 
-        if (arr[mid] == target) {
+        if (arr[mid] == target)
+        {
             return mid;
-        } else if (arr[mid] < target) {
+        }
+        else if (arr[mid] < target)
+        {
             left = mid + 1;
-        } else {
+        }
+        else
+        {
             right = mid - 1;
         }
     }
@@ -23,15 +30,22 @@ int binarySearch(int arr[], int n, int target) {
 }
 
 // Binary search function with recursion
-int binarySearchRecursive(int arr[], int left, int right, int target) {
-    if (left <= right) {
+int binarySearchRecursive(int arr[], int left, int right, int target)
+{
+    if (left <= right)
+    {
         int mid = left + (right - left) / 2;
 
-        if (arr[mid] == target) {
+        if (arr[mid] == target)
+        {
             return mid;
-        } else if (arr[mid] < target) {
+        }
+        else if (arr[mid] < target)
+        {
             return binarySearchRecursive(arr, mid + 1, right, target);
-        } else {
+        }
+        else
+        {
             return binarySearchRecursive(arr, left, mid - 1, target);
         }
     }
@@ -39,7 +53,8 @@ int binarySearchRecursive(int arr[], int left, int right, int target) {
     return -1;
 }
 
-int main() {
+int main()
+{
     // Binary search is an efficient searching algorithm used to find the position of a target element within a sorted array. It works by repeatedly dividing the search interval in half, effectively reducing the search space.
 
     int arr[] = {2, 3, 4, 10, 40};
@@ -48,8 +63,9 @@ int main() {
     int target = 10;
 
     int result = binarySearch(arr, n, target);
-    
-    if (result == -1) {
+
+    if (result == -1)
+    {
         cout << "Element not found\n";
         return 0;
     }
