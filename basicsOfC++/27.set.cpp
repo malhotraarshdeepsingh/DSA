@@ -2,23 +2,26 @@
 #include <set>
 using namespace std;
 
-int main() {
-    set <int> s;
+int main()
+{
+    set<int> s;
     s.insert(10);
     s.insert(20);
     s.insert(30);
 
-    for (auto it : s) {
+    for (auto it : s)
+    {
         cout << it << " ";
     }
     cout << endl;
-    
+
     s.erase(20);
-    for (auto it : s) {
+    for (auto it : s)
+    {
         cout << it << " ";
     }
     cout << endl;
-    
+
     s.clear();
     cout << "Size of set after clearing: " << s.size() << endl;
 
@@ -28,7 +31,7 @@ int main() {
     // lower_bound returns the address of the element at the position or the next greater element
     // upper_bound returns the address of the next greater element
 
-    // multi set 
+    // multi set
     // allows duplicates
     // multiset<int> ms;
 
