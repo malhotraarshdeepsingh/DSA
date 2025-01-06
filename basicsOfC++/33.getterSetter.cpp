@@ -18,6 +18,9 @@ public:
         ingredients = {"Water", "Tea Leaves", "Sugar"};
     }
 
+    // delegating constructor
+    // Chai(string name) : Chai(name, 1, {"Water", "Tea Leaves", "Sugar"}) {}
+
     Chai(string name, int servings, vector<string> ingredients)
     {
         teaName = name;
@@ -77,7 +80,7 @@ int main()
     chai.setTeaName("Lemon Tea");
     chai.setServings(2);
     chai.setIngredients({"Water", "Lemon", "Sugar"});
-    
+
     chai.displayChaiDetails();
 
     return 0;
