@@ -30,6 +30,8 @@ bool checkValidGrid(vector<vector<int>>& grid) {
     return true;
 }
 
+// Time Complexity :- O(n^2) where n is the size of the grid
+
 int main() {
     vector<vector<int>> grid = {
         {0, 17, 10, 3, 22},
