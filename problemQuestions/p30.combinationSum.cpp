@@ -32,6 +32,7 @@ void getAllCombinations(vector<int> &arr, int target, int index, vector<int> &cu
     // exclusion
     getAllCombinations(arr, target, index + 1, currentCombination, result);
 }
+
 vector<vector<int>> CombinationsSum(vector<int> &arr, int target)
 {
     vector<vector<int>> result;
