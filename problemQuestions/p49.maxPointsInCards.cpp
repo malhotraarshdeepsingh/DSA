@@ -8,26 +8,31 @@
 #include <climits>
 using namespace std;
 
-int maxScore(vector<int>& cardPoints, int k) {
+int maxScore(vector<int> &cardPoints, int k)
+{
     int n = cardPoints.size();
     int totalSum = 0;
 
-    for (int points : cardPoints) {
+    for (int points : cardPoints)
+    {
         totalSum += points;
     }
 
-    if (k == n) return totalSum;
+    if (k == n)
+        return totalSum;
 
     int windowSize = n - k;
     int minSubarraySum = 0, currentSum = 0;
 
-    for (int i = 0; i < windowSize; i++) {
+    for (int i = 0; i < windowSize; i++)
+    {
         currentSum += cardPoints[i];
     }
 
     minSubarraySum = currentSum;
 
-    for (int i = windowSize; i < n; i++) {
+    for (int i = windowSize; i < n; i++)
+    {
         currentSum += cardPoints[i] - cardPoints[i - windowSize];
         minSubarraySum = min(minSubarraySum, currentSum);
     }
