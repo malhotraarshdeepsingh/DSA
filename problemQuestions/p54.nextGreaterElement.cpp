@@ -4,22 +4,23 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
-    vector <int> arr = {6, 8, 0, 1, 3};
+    vector<int> arr = {6, 8, 0, 1, 3};
 
-    vector <int> result(arr.size(), 0);
-    stack <int> s;
-    
-    for (int i = v.size() - 1; i >= 0; i--){
+    vector<int> result(arr.size(), 0);
+    stack<int> s;
+
+    for (int i = arr.size() - 1; i >= 0; i--)
+    {
         while (!s.empty() && s.top() <= arr[i])
             s.pop();
-            
+
         if (s.empty())
             result.push_back(-1);
         else
             result.push_back(s.top());
-            
+
         s.push(arr[i]);
     }
 
