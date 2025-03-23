@@ -86,3 +86,90 @@ int main()
 
 // Time Complexity: O(1) for all operations
 // Space Complexity: O(n)
+
+
+// Implementing Stack using Queue
+class Stack
+{
+public:
+    queue<int> q1, q2;
+
+    Stack()
+    {
+    }
+
+    void push(int data)
+    {
+        q2.push(data);
+
+        while (!q1.empty())
+        {
+            q2.push(q1.front());
+            q1.pop();
+        }
+
+        swap(q1, q2);
+    }
+
+    void pop()
+    {
+        if (!q1.empty())
+            q1.pop();
+    }
+
+    int top()
+    {
+        if (!q1.empty())
+            return q1.front();
+
+        return -1;
+    }
+};
+
+// Implementing Queue using Stack
+class Queue
+{
+public:
+    stack<int> s1, s2;
+
+    Queue()
+    {
+    }
+
+    void push(int data)
+    {
+        s1.push(data);
+    }
+
+    void pop()
+    {
+        if (s2.empty())
+        {
+            while (!s1.empty())
+            {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+
+        if (!s2.empty())
+            s2.pop();
+    }
+
+    int front()
+    {
+        if (s2.empty())
+        {
+            while (!s1.empty())
+            {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+
+        if (!s2.empty())
+            return s2.top();
+
+        return -1;
+    }
+};
