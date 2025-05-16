@@ -24,7 +24,6 @@ int trap(vector<int> &height)
         water += min(left[i], right[i]) - height[i];
 
     return water;
-
 }
 
 // Method 2 : Two Pointer Approach
