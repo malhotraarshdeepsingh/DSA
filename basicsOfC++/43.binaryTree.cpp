@@ -3,52 +3,61 @@
 
 using namespace std;
 
-class Node
-{
+class Node {
 public:
     int data;
     Node *left;
     Node *right;
 
-    Node(int value)
-    {
+    Node(int value) {
         data = value;
         left = NULL;
         right = NULL;
     }
 };
 
-Node *buildTree(vector<int> &arr)
-{
-    if (arr.empty())
+Node* buildTreeHelper(const vector<int>& arr, int& index) {
+    if (index >= arr.size() || arr[index] == -1) {
+        index++; 
         return NULL;
-
-    Node *root = new Node(arr[0]);
-    vector<Node *> nodes;
-    nodes.push_back(root);
-
-    for (int i = 1; i < arr.size(); ++i)
-    {
-        if (arr[i] == -1)
-        {
-            return NULL; // -1 indicates no node
-        }
-        else
-        {
-            Node *newNode = new Node(arr[i]);
-            root->left = buildTree(arr);
-            root->right = buildTree(arr);
-        }
     }
 
-    return root;
+    Node* newNode = new Node(arr[index++]);
+    newNode->left = buildTreeHelper(arr, index);
+    newNode->right = buildTreeHelper(arr, index);
+
+    return newNode;
 }
 
-int main()
-{
+Node* buildTree(const vector<int>& arr) {
+    int index = 0;
+    return buildTreeHelper(arr, index);
+}
+
+void inorder(Node* root) {
+    if (!root) return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+
+int main() {
     vector<int> arr = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
 
-    Node *root = buildTree(arr);
+    Node* root = buildTree(arr);
+
+    if (root) {
+        cout << "Binary Tree built successfully." << endl;
+        cout << "Root node value: " << root->data << endl;
+        cout << "Left child of root: " << (root->left ? to_string(root->left->data) : "NULL") << endl;
+        cout << "Right child of root: " << (root->right ? to_string(root->right->data) : "NULL") << endl;
+
+        cout << "Inorder traversal: ";
+        inorder(root);
+        cout << endl;
+    } else {
+        cout << "Tree is empty." << endl;
+    }
 
     return 0;
 }
