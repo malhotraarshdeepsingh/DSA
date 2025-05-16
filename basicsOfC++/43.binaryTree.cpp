@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -41,6 +42,23 @@ void inorder(Node* root) {
     inorder(root->right);
 }
 
+void levelOrder(Node* root) {
+    if (!root) return;
+
+    vector<Node*> queue;
+    queue.push_back(root);
+
+    while (!queue.empty()) {
+        Node* current = queue.front();
+        queue.erase(queue.begin());
+
+        cout << current->data << " ";
+
+        if (current->left) queue.push_back(current->left);
+        if (current->right) queue.push_back(current->right);
+    }
+}
+
 int main() {
     vector<int> arr = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
 
@@ -51,6 +69,8 @@ int main() {
         cout << "Root node value: " << root->data << endl;
         cout << "Left child of root: " << (root->left ? to_string(root->left->data) : "NULL") << endl;
         cout << "Right child of root: " << (root->right ? to_string(root->right->data) : "NULL") << endl;
+        cout << "Level order traversal: ";
+        levelOrder(root);
 
         cout << "Inorder traversal: ";
         inorder(root);
