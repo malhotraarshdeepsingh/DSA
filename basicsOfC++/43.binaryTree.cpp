@@ -59,6 +59,24 @@ void levelOrder(Node* root) {
     }
 }
 
+// Height of Binary Tree
+int height(Node* root) {
+    if (!root) return 0;
+    return 1 + max(height(root->left), height(root->right));
+} // Time Complexity: O(n), Space Complexity: O(h)
+
+// Count Nodes in Binary Tree
+int countNodes(Node* root) {
+    if (!root) return 0;
+    return 1 + countNodes(root->left) + countNodes(root->right);
+} // Time Complexity: O(n), Space Complexity: O(h)
+
+// Sum of Nodes in Binary Tree
+int sumOfNodes(Node* root) {
+    if (!root) return 0;
+    return root->data + sumOfNodes(root->left) + sumOfNodes(root->right);
+} // Time Complexity: O(n), Space Complexity: O(h)
+
 int main() {
     vector<int> arr = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
 
