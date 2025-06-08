@@ -11,13 +11,11 @@ vector<int> maxSlidingWindow(vector<int> &nums, int k)
 
     for (int i = 0; i < nums.size(); i++)
     {
-        // Remove elements not in the current window
         if (!dq.empty() && dq.front() == i - k)
         {
             dq.pop_front();
         }
 
-        // Remove elements smaller than the current element
         while (!dq.empty() && nums[dq.back()] < nums[i])
         {
             dq.pop_back();
@@ -25,7 +23,6 @@ vector<int> maxSlidingWindow(vector<int> &nums, int k)
 
         dq.push_back(i);
 
-        // The front of the deque is the largest element for the current window
         if (i >= k - 1)
         {
             result.push_back(nums[dq.front()]);

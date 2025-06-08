@@ -18,7 +18,6 @@ public:
 };
 
 // Function to check if two binary trees are identical
-
 bool isIdentical(Node *root1, Node *root2)
 {
     if (!root1 && !root2)
@@ -34,7 +33,6 @@ bool isIdentical(Node *root1, Node *root2)
 }
 
 // Function to check if a tree is a subtree of other tree
-
 bool isSubtree(Node *root1, Node *root2)
 {
     if (root1 == NULL || root2 == NULL)
