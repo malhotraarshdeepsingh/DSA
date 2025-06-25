@@ -2,35 +2,40 @@
 
 using namespace std;
 
-struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-void flatten(TreeNode* root) {
-    if (!root) return;
+void flatten(TreeNode *root)
+{
+    if (!root)
+        return;
 
     flatten(root->left);
     flatten(root->right);
 
-    TreeNode* temp = root->right;
+    TreeNode *temp = root->right;
 
     root->right = root->left;
     root->left = NULL;
 
-    TreeNode* current = root;
-    while (current->right) {
+    TreeNode *current = root;
+    while (current->right)
+    {
         current = current->right;
     }
     current->right = temp;
 }
 
-int main() {
+int main()
+{
 
     // Example usage:
-    TreeNode* root = new TreeNode(1);
+    TreeNode *root = new TreeNode(1);
     root->left = new TreeNode(2);
     root->right = new TreeNode(5);
     root->left->left = new TreeNode(3);
@@ -39,11 +44,12 @@ int main() {
 
     flatten(root);
 
-    TreeNode* current = root;
-    while (current) {
+    TreeNode *current = root;
+    while (current)
+    {
         cout << current->val << " ";
         current = current->right;
     }
-    
+
     return 0;
 }

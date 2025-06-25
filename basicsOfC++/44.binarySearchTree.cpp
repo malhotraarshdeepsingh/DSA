@@ -5,7 +5,8 @@
 #include <algorithm>
 using namespace std;
 
-struct TreeNode {
+struct TreeNode
+{
     int val;
     unique_ptr<TreeNode> left;
     unique_ptr<TreeNode> right;
@@ -13,71 +14,111 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-class BinarySearchTree {
+class BinarySearchTree
+{
 private:
     unique_ptr<TreeNode> root;
 
-    void insert(unique_ptr<TreeNode>& node, int val) {
-        if (!node) {
+    void insert(unique_ptr<TreeNode> &node, int val)
+    {
+        if (!node)
+        {
             node = make_unique<TreeNode>(val);
-        } else if (val < node->val) {
+        }
+        else if (val < node->val)
+        {
             insert(node->left, val);
-        } else {
+        }
+        else
+        {
             insert(node->right, val);
         }
     }
 
-    void inorderTraversal(const unique_ptr<TreeNode>& node, vector<int>& result) const {
-        if (node) {
+    void inorderTraversal(const unique_ptr<TreeNode> &node, vector<int> &result) const
+    {
+        if (node)
+        {
             inorderTraversal(node->left, result);
             result.push_back(node->val);
             inorderTraversal(node->right, result);
         }
     }
 
-    bool search(const unique_ptr<TreeNode>& node, int val) const {
-        if (!node) return false;
-        if (node->val == val) return true;
+    bool search(const unique_ptr<TreeNode> &node, int val) const
+    {
+        if (!node)
+            return false;
+        if (node->val == val)
+            return true;
         return val < node->val ? search(node->left, val) : search(node->right, val);
     }
 
-    void clear(unique_ptr<TreeNode>& node) {
-        if (node) {
+    void clear(unique_ptr<TreeNode> &node)
+    {
+        if (node)
+        {
             clear(node->left);
             clear(node->right);
             node.reset();
         }
     }
 
+    bool validBSThelper(TreeNode *root, TreeNode *minVal, TreeNode *maxVal)
+    {
+        if (!root)
+            return true;
+        if ((minVal && root->val <= minVal->val) || (maxVal && root->val >= maxVal->val))
+        {
+            return false;
+        }
+
+        return validBSThelper(root->left.get(), minVal, root) &&
+               validBSThelper(root->right.get(), root, maxVal);
+    }
+
+    bool isValidBST(TreeNode *root)
+    {
+        return validBSThelper(root, nullptr, nullptr);
+    }
+
 public:
     BinarySearchTree() : root(nullptr) {}
-    ~BinarySearchTree() {
+    ~BinarySearchTree()
+    {
         clear(root);
     }
-    void insert(int val) {
+    void insert(int val)
+    {
         insert(root, val);
     }
-    vector<int> inorderTraversal() const {
+    vector<int> inorderTraversal() const
+    {
         vector<int> result;
         inorderTraversal(root, result);
         return result;
     }
-    bool search(int val) const {
+    bool search(int val) const
+    {
         return search(root, val);
     }
-    void clear() {
+    void clear()
+    {
         clear(root);
     }
-    void print() const {
+    void print() const
+    {
         vector<int> result = inorderTraversal();
-        for (int val : result) {
+        for (int val : result)
+        {
             cout << val << " ";
         }
         cout << endl;
     }
 };
 
-int main() {
+int main()
+{
     BinarySearchTree bst;
     bst.insert(5);
     bst.insert(3);
@@ -91,11 +132,11 @@ int main() {
     bst.print();
 
     int searchValue = 4;
-    cout << "Searching for " << searchValue << ": " 
+    cout << "Searching for " << searchValue << ": "
          << (bst.search(searchValue) ? "Found" : "Not Found") << endl;
 
     searchValue = 10;
-    cout << "Searching for " << searchValue << ": " 
+    cout << "Searching for " << searchValue << ": "
          << (bst.search(searchValue) ? "Found" : "Not Found") << endl;
 
     return 0;
