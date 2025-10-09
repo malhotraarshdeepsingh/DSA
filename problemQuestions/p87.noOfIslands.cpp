@@ -6,19 +6,17 @@ using namespace std;
 class Graph
 {
     int v;
-    list<int> *l; // list of address of adjacent nodes
+    list<int> *l;
 
 public:
     Graph(int v)
     {
         this->v = v;
-        // arr = new int[v];
         l = new list<int>[v];
     }
 
     void addEdge(int i, int j)
     {
-        // undirected graph
         l[i].push_back(j);
         l[j].push_back(i);
     }
@@ -77,6 +75,9 @@ public:
         }
 
         return islands;
+
+        // time complexity: O(n*m)
+        // space complexity: O(n*m)
     }
 };
 
