@@ -1,4 +1,3 @@
-// DFS -> Depth First Search
 #include <iostream>
 #include <vector>
 #include <list>
@@ -82,9 +81,51 @@ public:
     {
         vector<bool> visited(v, false);
         dfsHelper(0, visited);
+    }
 
-        // Time complexity: O(V + E)
-        // Space complexity: O(V)
+    bool cycleDetectionHelper(int u, int par, vector<bool> &visited)
+    {
+        cout << u << ",";
+        visited[u] = true;
+        list<int> neighbors = l[u];
+
+        for (auto v : neighbors)
+        {
+            if (!visited[v])
+            {
+                if (cycleDetectionHelper(v, u, visited))
+                    return true;
+            } else if (v != par)
+            {
+                cout << "Cycle detected at node: " << v << endl;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    bool cycleDetection()
+    {
+        vector<bool> visited(v, false);
+        
+        for (int i = 0; i < v; i++)
+        {
+            if (!visited[i])
+            {
+                if (cycleDetectionHelper(i, -1, visited))
+                {
+                    cout << "Cycle found in the graph." << endl;
+                    return true;
+                }
+            }
+        }
+
+        cout << "No cycle found in the graph." << endl;
+        return false;
+
+        // Time Complexity: O(V + E)
+        // Space Complexity: O(V)
     }
 };
 
@@ -102,6 +143,8 @@ int main()
 
     g.bfs();
     g.dfs();
+
+    g.cycleDetection(); 
 
     return 0;
 }
