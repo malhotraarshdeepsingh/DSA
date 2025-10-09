@@ -1,5 +1,7 @@
+// Breadth First Search (BFS) in Graphs
 #include <iostream>
 #include <list>
+#include <queue>
 using namespace std;
 
 class Graph
@@ -34,6 +36,34 @@ public:
             cout << endl;
         }
     }
+
+    void bfs()
+    {
+        queue<int> q;
+        vector<bool> visited(v, false);
+
+        q.push(0);
+        visited[0] = true;
+
+        while (!q.empty())
+        {
+            int u = q.front();
+            q.pop();
+
+            cout << u << ",";
+
+            for (auto v : l[u])
+            {
+                if (!visited[v])
+                {
+                    q.push(v);
+                    visited[v] = true;
+                }
+            }
+        }
+
+        cout << endl;
+    }
 };
 
 int main()
@@ -47,6 +77,7 @@ int main()
     g.addEdge(2, 4);
 
     g.printAdjList();
+    g.bfs();
 
     return 0;
 }
