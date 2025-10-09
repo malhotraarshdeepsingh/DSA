@@ -1,7 +1,6 @@
-// Breadth First Search (BFS) in Graphs
 #include <iostream>
+#include <vector>
 #include <list>
-#include <queue>
 using namespace std;
 
 class Graph
@@ -37,32 +36,20 @@ public:
         }
     }
 
-    void bfs()
-    {
-        queue<int> q;
-        vector<bool> visited(v, false);
+    void dfsHelper(int u, vector<bool> &visited) {
+        cout << u << ",";
+        visited[u] = true;
 
-        q.push(0);
-        visited[0] = true;
-
-        while (!q.empty())
-        {
-            int u = q.front();
-            q.pop();
-
-            cout << u << ",";
-
-            for (auto v : l[u])
-            {
-                if (!visited[v])
-                {
-                    q.push(v);
-                    visited[v] = true;
-                }
+        for (auto v : l[u]) {
+            if (!visited[v]) {
+                dfsHelper(v, visited);
             }
         }
+    }
 
-        cout << endl;
+    void dfs() {
+        vector<bool> visited(v, false);
+        dfsHelper(0, visited);
     }
 };
 
@@ -77,10 +64,8 @@ int main()
     g.addEdge(2, 4);
 
     g.printAdjList();
-    g.bfs();
+
+    g.dfs();
 
     return 0;
 }
-
-// Time Complexity: O(V + E) where V is the number of vertices and E is the number of edges
-// Space Complexity: O(V) for the queue and visited array
