@@ -83,7 +83,7 @@ public:
         dfsHelper(0, visited);
     }
 
-    bool cycleDetectionHelper(int u, int par, vector<bool> &visited)
+    bool cycleDetectionHelperDFS(int u, int par, vector<bool> &visited)
     {
         cout << u << ",";
         visited[u] = true;
@@ -93,9 +93,10 @@ public:
         {
             if (!visited[v])
             {
-                if (cycleDetectionHelper(v, u, visited))
+                if (cycleDetectionHelperDFS(v, u, visited))
                     return true;
-            } else if (v != par)
+            }
+            else if (v != par)
             {
                 cout << "Cycle detected at node: " << v << endl;
                 return true;
@@ -105,15 +106,68 @@ public:
         return false;
     }
 
-    bool cycleDetection()
+    bool cycleDetectionDFS()
     {
         vector<bool> visited(v, false);
-        
+
         for (int i = 0; i < v; i++)
         {
             if (!visited[i])
             {
-                if (cycleDetectionHelper(i, -1, visited))
+                if (cycleDetectionHelperDFS(i, -1, visited))
+                {
+                    cout << "Cycle found in the graph." << endl;
+                    return true;
+                }
+            }
+        }
+
+        cout << "No cycle found in the graph." << endl;
+        return false;
+    }
+
+    bool cycleDetectionHelperBFS(int u, vector<bool> &visited)
+    {
+        queue<pair<int, int>> q; // {node, parent}
+
+        q.push({u, -1});
+        visited[u] = true;
+
+        while (!q.empty())
+        {
+            int node = q.front().first;
+            int par = q.front().second;
+            q.pop();
+
+            list<int> neighbors = l[node];
+
+            for (auto v : neighbors)
+            {
+                if (!visited[v])
+                {
+                    q.push({v, node});
+                    visited[v] = true;
+                }
+                else if (v != par)
+                {
+                    cout << "Cycle detected at node: " << v << endl;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    bool cycleDetectionBFS()
+    {
+        vector<bool> visited(v, false);
+
+        for (int i = 0; i < v; i++)
+        {
+            if (!visited[i])
+            {
+                if (cycleDetectionHelperBFS(i, visited))
                 {
                     cout << "Cycle found in the graph." << endl;
                     return true;
@@ -124,8 +178,8 @@ public:
         cout << "No cycle found in the graph." << endl;
         return false;
 
-        // Time Complexity: O(V + E)
-        // Space Complexity: O(V)
+        // time complexity: O(V + E)
+        // space complexity: O(V)
     }
 };
 
@@ -144,7 +198,8 @@ int main()
     g.bfs();
     g.dfs();
 
-    g.cycleDetection(); 
+    g.cycleDetectionDFS();
+    g.cycleDetectionBFS();
 
     return 0;
 }
