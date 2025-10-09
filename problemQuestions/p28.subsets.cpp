@@ -23,7 +23,7 @@ void printSubsets(vector<int> &arr, int index, vector<int> &currentSubset)
 
     // Skip duplicates
     int idx = index + 1;
-    while(idx < currentSubset.size() && currentSubset[idx] == currentSubset[index])
+    while (idx < currentSubset.size() && currentSubset[idx] == currentSubset[index])
         idx++;
 
     // Exclude the current element

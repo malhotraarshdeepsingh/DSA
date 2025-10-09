@@ -18,7 +18,8 @@ int main()
     l.push_front(4);
     l.push_front(3);
 
-    for (int val : l) {
+    for (int val : l)
+    {
         cout << val << " ";
     }
     cout << endl;
@@ -26,21 +27,23 @@ int main()
     // Remove elements from the end
     l.pop_back();
     cout << "After removing last element: ";
-    for (int val : l) {
+    for (int val : l)
+    {
         cout << val << " ";
     }
     cout << endl;
-    
+
     // Remove elements from the beginning
     l.pop_front();
     cout << "After removing first element: ";
-    for (int val : l) {
+    for (int val : l)
+    {
         cout << val << " ";
     }
     cout << endl;
 
     // all inbuilt functions of list
     // size, erase, clear, begin, end, rbegin, rend, insert, front, back, empty, remove, sort, reverse, unique, merge, splice, swap, assign, resize, push_front, push_back, pop_front, pop_back, max_size, remove_if
-    
+
     return 0;
 }

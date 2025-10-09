@@ -35,7 +35,7 @@ ListNode *reverseKGroup(ListNode *head, int k)
 
         prevNode = temp;
         temp = nextNode;
-        
+
         count++;
     }
 }

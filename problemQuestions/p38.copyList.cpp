@@ -11,12 +11,12 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode* copyListNode(ListNode *head)
+ListNode *copyListNode(ListNode *head)
 {
     if (head == NULL)
         return NULL;
 
-    unordered_map<ListNode*, ListNode*> map;
+    unordered_map<ListNode *, ListNode *> map;
 
     ListNode *newHead = new ListNode(head->val);
     ListNode *newNode = newHead;

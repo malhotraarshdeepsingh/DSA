@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void merge(vector <int>& v1, vector <int>& v2, int n, int m)
+void merge(vector<int> &v1, vector<int> &v2, int n, int m)
 {
     int idx = m + n - 1, i = m - 1, j = n - 1;
 
@@ -23,5 +23,5 @@ void merge(vector <int>& v1, vector <int>& v2, int n, int m)
         v1[idx--] = v2[j--];
     }
 
-    // Time Complexity - O(n + m) 
+    // Time Complexity - O(n + m)
 }

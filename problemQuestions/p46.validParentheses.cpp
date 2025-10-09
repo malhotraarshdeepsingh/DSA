@@ -3,9 +3,9 @@
 
 using namespace std;
 
-bool isValid (string str)
+bool isValid(string str)
 {
-    stack <char> s;
+    stack<char> s;
 
     for (char c : str)
     {

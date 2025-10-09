@@ -3,7 +3,7 @@
 using namespace std;
 
 // Brute force approach
-int maxArea (vector<int> &height)
+int maxArea(vector<int> &height)
 {
 
     int maxWater = 0;
@@ -22,7 +22,6 @@ int maxArea (vector<int> &height)
     return maxWater;
     // Time complexity: O(n^2)
     // Space complexity: O(1)
-    
 }
 
 // Two Pointer Approach
@@ -48,7 +47,6 @@ int maxAreaOptimized(vector<int> &height)
     return maxWater;
     // Time complexity: O(n)
     // Space complexity: O(1)
-
 }
 
 int main()

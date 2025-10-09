@@ -43,7 +43,7 @@ int minTimeToPaintBoards(vector<int> &boards, int painters, int boardCount)
         int mid = (st + end) / 2;
         int painterCount = 1, curSum = 0;
 
-        if(isPossible(boards, boardCount, painters, mid))
+        if (isPossible(boards, boardCount, painters, mid))
         {
             ans = mid;
             end = mid - 1;

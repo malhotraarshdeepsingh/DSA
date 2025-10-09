@@ -31,6 +31,6 @@ int main()
     chai.servings = 2;
     chai.ingredients = {"Water", "Tea Leaves", "Lemon", "Sugar"};
     chai.displayChaiDetails();
-    
+
     return 0;
 }

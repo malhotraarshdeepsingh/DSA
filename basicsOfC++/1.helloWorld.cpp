@@ -8,8 +8,9 @@
 // The main function is the entry point of a C++ program.
 
 // Custom namespace declarations
-namespace newCustom {
-    void display(){}
+namespace newCustom
+{
+    void display() {}
 }
 
 int main()

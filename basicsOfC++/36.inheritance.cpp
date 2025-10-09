@@ -70,8 +70,7 @@ public:
     }
 };
 
-int
-main()
+int main()
 {
     Tea *tea1 = new LemonTea(2);
     Tea *tea2 = new MasalaTea(4);

@@ -29,8 +29,6 @@ int main()
         j++;
     } while (j <= 10);
 
-
-
     // Sum of all odd numbers from 1 to N
 
     int n;
@@ -44,8 +42,6 @@ int main()
         a += 2;
     }
     cout << "Sum of all odd numbers from 1 to " << n << " is " << sum << endl;
-
-
 
     // Check if a number is prime or not
 
@@ -77,8 +73,6 @@ int main()
         cout << num << " is not a prime number." << endl;
     }
 
-
-
     // Print factorial of a number
 
     int factorial;
@@ -90,6 +84,6 @@ int main()
         fact *= i;
     }
     cout << "Factorial of " << factorial << " is " << fact << endl;
-    
+
     return 0;
 }

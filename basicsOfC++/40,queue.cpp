@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Node 
+class Node
 {
 public:
     int data;
@@ -86,7 +86,6 @@ int main()
 
 // Time Complexity: O(1) for all operations
 // Space Complexity: O(n)
-
 
 // Implementing Stack using Queue
 class Stack

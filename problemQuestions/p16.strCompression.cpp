@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-int compress (vector<char> &chars)
+int compress(vector<char> &chars)
 {
     int idx = 0, n = chars.size();
 
@@ -11,7 +11,7 @@ int compress (vector<char> &chars)
     {
         char ch = chars[i];
         int count = 0;
-        
+
         while (i < n && chars[i] == ch)
         {
             count++;
@@ -22,7 +22,7 @@ int compress (vector<char> &chars)
         {
             chars[idx++] = ch;
         }
-        
+
         chars[idx++] = ch;
         string str = to_string(count);
         for (char dig : str)

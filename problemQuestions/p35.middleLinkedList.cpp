@@ -9,7 +9,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode* middleNode(ListNode *node)
+ListNode *middleNode(ListNode *node)
 {
     ListNode *slow = node;
     ListNode *fast = node;

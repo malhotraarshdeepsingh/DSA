@@ -5,9 +5,9 @@ using namespace std;
 
 int lengthOfLongestSubstring(string s)
 {
-    unordered_map<char, int> charIndexMap; 
-    int maxLength = 0;                     
-    int start = 0;                         
+    unordered_map<char, int> charIndexMap;
+    int maxLength = 0;
+    int start = 0;
 
     for (int end = 0; end < s.size(); ++end)
     {

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int subArraySum(vector<int>& arr, int k)
+int subArraySum(vector<int> &arr, int k)
 {
     int n = arr.size();
     int count = 0;
@@ -20,7 +20,7 @@ int subArraySum(vector<int>& arr, int k)
     {
         if (prefixSum[i] == k)
             count++;
-        
+
         int val = prefixSum[i] - k;
 
         if (m.find(val) != m.end())
@@ -30,9 +30,8 @@ int subArraySum(vector<int>& arr, int k)
             m[prefixSum[i]] = 0;
 
         m[prefixSum[i]]++;
-    
     }
-    
+
     return count;
 }
 

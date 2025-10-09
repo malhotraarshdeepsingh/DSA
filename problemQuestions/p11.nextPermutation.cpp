@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void nextPermutation(vector <int> &A)
+void nextPermutation(vector<int> &A)
 {
     // inbuilt function
     // next_permutation(A.begin(), A.end());

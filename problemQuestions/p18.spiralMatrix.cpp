@@ -44,5 +44,4 @@ vector<int> spiralOrder(vector<vector<int>> &matrix)
     }
 
     return result;
-
 }

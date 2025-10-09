@@ -51,7 +51,7 @@ int main()
     double totalSalary = accumulate(employees.begin(), employees.end(), 0.0, [](double sum, const Employee &emp)
                                     { return sum + emp.salary; });
 
-    // Display the total salary                                
+    // Display the total salary
     cout << "\nTotal salary of all employees: $" << totalSalary << endl;
 
     // Find the average salary
@@ -62,16 +62,16 @@ int main()
 
     // Find the employee with the highest salary
     auto highestSalaryEmployee = max_element(employees.begin(), employees.end(), [](const Employee &a, const Employee &b)
-                                              { return a.salary < b.salary; });
-                                              
+                                             { return a.salary < b.salary; });
+
     // Display the employee with the highest salary
     cout << "\nEmployee with the highest salary:" << endl;
     displayEmployees(*highestSalaryEmployee);
-    
+
     // Find the employee with the lowest salary
     auto lowestSalaryEmployee = min_element(employees.begin(), employees.end(), [](const Employee &a, const Employee &b)
-                                             { return a.salary < b.salary; });
-                                             
+                                            { return a.salary < b.salary; });
+
     // Display the employee with the lowest salary
     cout << "\nEmployee with the lowest salary:" << endl;
     displayEmployees(*lowestSalaryEmployee);
@@ -83,8 +83,8 @@ int main()
     cin >> searchId;
 
     auto foundEmployee = find_if(employees.begin(), employees.end(), [searchId](const Employee &emp)
-                                                              { return emp.id == searchId; });
-                                                              
+                                 { return emp.id == searchId; });
+
     // Check if the employee with the specific ID was found
     if (foundEmployee != employees.end())
     {
@@ -98,12 +98,12 @@ int main()
 
     // Search for employees with a specific salary range
     double minSalary, maxSalary;
-    
+
     cout << "\nEnter minimum salary: ";
     cin >> minSalary;
     cout << "Enter maximum salary: ";
     cin >> maxSalary;
-    
+
     // Display employees within the specified salary range
     cout << "\nEmployees with salary between $" << minSalary << " and $" << maxSalary << ":" << endl;
     for (const auto &emp : employees)

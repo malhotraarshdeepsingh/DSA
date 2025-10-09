@@ -65,6 +65,6 @@ int main()
     account.withdraw(500);
     account.deposit(-100);
     account.withdraw(-100);
-    
+
     return 0;
 }

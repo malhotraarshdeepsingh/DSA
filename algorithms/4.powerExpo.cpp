@@ -8,16 +8,16 @@ double power(double x, int n)
 
     if (n == 0)
         return 1;
-    
+
     if (x == 0)
         return 0;
 
     if (x == 1)
         return x;
-    
+
     if (x == -1 && n % 2 == 0)
         return 1;
-    
+
     if (x == -1 && n % 2 != 0)
         return -1;
 
@@ -34,7 +34,7 @@ double power(double x, int n)
 
     vector<int> binaryRepresentation;
     long tempExponent = binaryExponent;
-    
+
     while (tempExponent > 0)
     {
         binaryRepresentation.push_back(tempExponent % 2);
@@ -54,10 +54,9 @@ double power(double x, int n)
     return result;
     // Time complexity: O(log n)
     // Space complexity: O(1)
-
 }
 
-int maxProfit(vector <int> &prices)
+int maxProfit(vector<int> &prices)
 {
     int maxProfit = 0, bestBuy = prices[0];
 
@@ -65,7 +64,7 @@ int maxProfit(vector <int> &prices)
     {
         if (prices[i] > bestBuy)
             maxProfit = max(maxProfit, prices[i] - bestBuy);
-        bestBuy = min(bestBuy, prices[i]);            
+        bestBuy = min(bestBuy, prices[i]);
     }
 
     return maxProfit;
@@ -84,10 +83,10 @@ int main()
 
     cout << x << "^" << n << " = " << result << endl;
 
-    vector <int> prices = {7, 1, 5, 3, 6, 4};
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
 
     int maxProfitValue = maxProfit(prices);
-    
+
     cout << "Maximum profit: " << maxProfitValue << endl;
 
     return 0;

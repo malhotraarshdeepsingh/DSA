@@ -28,16 +28,16 @@ int main()
         cout << "oranges found" << endl;
     }
 
-    // Other maps 
+    // Other maps
 
-    // multi map 
-    // we can store multiple keys 
+    // multi map
+    // we can store multiple keys
     // multimap<string, int> mm;
 
     // unordered map
     // unordered_map<string, int> um;
     // stores in a random order
     // as it is unordered we have constant time complexity for search, insert and delete operations
-    
+
     return 0;
 }

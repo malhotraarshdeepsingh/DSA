@@ -4,10 +4,10 @@
 
 using namespace std;
 
-vector <int> findMissingAndRepeating(vector <vector <int>> &arr)
+vector<int> findMissingAndRepeating(vector<vector<int>> &arr)
 {
     int n = arr.size();
-    vector <int> result;
+    vector<int> result;
     unordered_set<int> s;
     int a, b;
     int sum = 0;
@@ -17,7 +17,8 @@ vector <int> findMissingAndRepeating(vector <vector <int>> &arr)
         for (int j = 0; j < n; j++)
         {
             sum += arr[i][j];
-            if (s.find(arr[i][j]) != s.end()){
+            if (s.find(arr[i][j]) != s.end())
+            {
                 a = arr[i][j];
                 result.push_back(a);
                 break;

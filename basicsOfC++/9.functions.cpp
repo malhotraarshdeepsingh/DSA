@@ -18,7 +18,7 @@ int sumOfDigits(int n)
     return sum;
 }
 
-// Calculate nCr 
+// Calculate nCr
 int nCr(int n, int r)
 {
     int numerator = 1, denominator = 1;
@@ -41,7 +41,7 @@ int main()
     int n, r;
     cout << "Enter n and r: ";
     cin >> n >> r;
-    
+
     cout << "nCr(" << n << ", " << r << ") is " << nCr(n, r) << endl;
 
     return 0;

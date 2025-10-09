@@ -9,7 +9,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode* reverseList (ListNode *head)
+ListNode *reverseList(ListNode *head)
 {
     ListNode *prev = NULL;
     ListNode *curr = head;
@@ -19,7 +19,7 @@ ListNode* reverseList (ListNode *head)
     {
         next = curr->next;
         curr->next = prev;
-        
+
         prev = curr;
         curr = next;
     }

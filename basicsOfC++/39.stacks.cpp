@@ -3,9 +3,9 @@
 #include <stack>
 using namespace std;
 
-class Stack 
+class Stack
 {
-    vector <int> v;
+    vector<int> v;
 
 public:
     void push(int data)
@@ -40,7 +40,7 @@ public:
 int main()
 {
     // Stack s;
-    stack <int> s;
+    stack<int> s;
     s.push(1);
     s.push(2);
     s.push(3);

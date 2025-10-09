@@ -36,7 +36,7 @@ bool isIdentical(Node *root1, Node *root2)
 bool isSubtree(Node *root1, Node *root2)
 {
     if (root1 == NULL || root2 == NULL)
-        return root1 == root2; 
+        return root1 == root2;
 
     if (root1->data == root2->data && isIdentical(root1, root2))
         return true;

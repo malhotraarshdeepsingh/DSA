@@ -32,7 +32,7 @@ vector<vector<int>> fourSum(vector<int> &nums, int target)
                 vector<int> quad = {nums[i], nums[j], nums[left], nums[right]};
                 result.push_back(quad);
 
-                while (left < right && nums[left] == nums[left-1])
+                while (left < right && nums[left] == nums[left - 1])
                     left++;
             }
             else if (sum < target)

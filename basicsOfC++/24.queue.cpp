@@ -7,7 +7,7 @@ int main()
 {
     queue<int> q;
     // same syntax as stack
-    
+
     // Insert elements into queue
     q.push(10);
     q.push(20);

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<int> twoSum(vector <int> &nums, int target)
+vector<int> twoSum(vector<int> &nums, int target)
 {
     unordered_map<int, int> m;
     vector<int> result;

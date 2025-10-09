@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-class Node 
+class Node
 {
 public:
     int val;
@@ -11,41 +11,41 @@ public:
     Node(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-vector<int> getPredSucc(Node *root, int target) 
+vector<int> getPredSucc(Node *root, int target)
 {
     Node *curr = root;
     Node *pred = nullptr, *succ = nullptr;
 
-    while(curr)
+    while (curr)
     {
-        if(curr->val == target) 
+        if (curr->val == target)
         {
-            if(curr->left) 
+            if (curr->left)
             {
                 Node *temp = curr->left;
-                while(temp->right) 
+                while (temp->right)
                 {
                     temp = temp->right;
                 }
                 pred = temp;
             }
-            if(curr->right) 
+            if (curr->right)
             {
                 Node *temp = curr->right;
-                while(temp->left) 
+                while (temp->left)
                 {
                     temp = temp->left;
                 }
                 succ = temp;
             }
             break;
-        } 
-        else if(curr->val > target) 
+        }
+        else if (curr->val > target)
         {
             succ = curr;
             curr = curr->left;
-        } 
-        else 
+        }
+        else
         {
             pred = curr;
             curr = curr->right;
@@ -55,7 +55,7 @@ vector<int> getPredSucc(Node *root, int target)
     return {pred ? pred->val : -1, succ ? succ->val : -1};
 }
 
-int main() 
+int main()
 {
     Node *root = new Node(20);
     root->left = new Node(10);
@@ -66,7 +66,7 @@ int main()
 
     int target = 10;
     vector<int> result = getPredSucc(root, target);
-    
+
     cout << "Predecessor: " << result[0] << ", Successor: " << result[1] << endl;
 
     // Clean up memory

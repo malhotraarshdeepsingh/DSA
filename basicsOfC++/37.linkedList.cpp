@@ -103,7 +103,7 @@ public:
     void insert(int value, int position)
     {
         Node *newNode = new Node(value);
-        
+
         if (head == NULL)
         {
             head = tail = newNode;

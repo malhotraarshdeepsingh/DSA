@@ -19,7 +19,7 @@ vector<int> productExceptSelf(vector<int> &nums)
     }
 
     return ans;
-    // Time complexity: O(n^2)    
+    // Time complexity: O(n^2)
 }
 
 // Optimized Method using prefix and suffix arrays
@@ -34,7 +34,7 @@ vector<int> productExceptSelfOptimized(vector<int> &nums)
     }
 
     int suffix = 1;
-    for (int i = n-2; i >= 0; i--)
+    for (int i = n - 2; i >= 0; i--)
     {
         suffix *= nums[i + 1];
         ans[i] *= suffix;

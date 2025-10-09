@@ -17,7 +17,7 @@ string reverseWords(string str)
     for (int i = 0; i < len; i++)
     {
         string word = "";
-        while(i < len && str[i] != ' ')
+        while (i < len && str[i] != ' ')
         {
             word += str[i];
             i++;

@@ -14,13 +14,14 @@ public:
 class Solution
 {
 public:
-    TreeNode* prev = NULL;
-    TreeNode* first = NULL;
-    TreeNode* second = NULL;
+    TreeNode *prev = NULL;
+    TreeNode *first = NULL;
+    TreeNode *second = NULL;
 
-    void inorder(TreeNode* root)
+    void inorder(TreeNode *root)
     {
-        if (!root) return;
+        if (!root)
+            return;
 
         inorder(root->left);
 
@@ -35,7 +36,7 @@ public:
         inorder(root->right);
     }
 
-    void recoverTree(TreeNode* root)
+    void recoverTree(TreeNode *root)
     {
         inorder(root);
 

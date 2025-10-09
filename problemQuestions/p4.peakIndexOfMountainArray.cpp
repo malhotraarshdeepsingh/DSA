@@ -15,7 +15,7 @@ int peakIndexOfMountainArray(vector<int> &A)
         {
             return mid;
         }
-        else if (A[mid-1] < A[mid])
+        else if (A[mid - 1] < A[mid])
         {
             left = mid + 1;
         }
@@ -32,7 +32,7 @@ int main()
     vector<int> numbers = {0, 2, 1, 0};
     vector<int> num = {0, 10, 5, 2};
     vector<int> number = {3, 4, 5, 1};
-    
+
     int result1 = peakIndexOfMountainArray(nums);
     int result2 = peakIndexOfMountainArray(numbers);
     int result3 = peakIndexOfMountainArray(num);

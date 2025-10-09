@@ -3,10 +3,10 @@
 
 using namespace std;
 
-bool isValid(string s) 
+bool isValid(string s)
 {
-    stack <char> st;
-    
+    stack<char> st;
+
     for (int i = 0; i < s.size(); i++)
     {
         if (s[i] == '(' || s[i] == '{' || s[i] == '[')
@@ -25,7 +25,7 @@ bool isValid(string s)
                 st.pop();
         }
     }
-    
+
     return st.empty();
 }
 

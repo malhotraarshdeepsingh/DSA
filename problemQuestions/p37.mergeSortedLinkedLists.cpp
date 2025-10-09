@@ -2,14 +2,14 @@
 
 using namespace std;
 
-struct ListNode 
+struct ListNode
 {
     int val;
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode* merge(ListNode* list1, ListNode* list2)
+ListNode *merge(ListNode *list1, ListNode *list2)
 {
     if (list1 == NULL)
         return list2;

@@ -66,20 +66,27 @@ public:
         cout << endl;
     }
 
-    void dfsHelper(int u, vector<bool> &visited) {
+    void dfsHelper(int u, vector<bool> &visited)
+    {
         cout << u << ",";
         visited[u] = true;
 
-        for (auto v : l[u]) {
-            if (!visited[v]) {
+        for (auto v : l[u])
+        {
+            if (!visited[v])
+            {
                 dfsHelper(v, visited);
             }
         }
     }
 
-    void dfs() {
+    void dfs()
+    {
         vector<bool> visited(v, false);
         dfsHelper(0, visited);
+
+        // Time complexity: O(V + E)
+        // Space complexity: O(V)
     }
 };
 
