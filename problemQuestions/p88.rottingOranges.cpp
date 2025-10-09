@@ -110,5 +110,8 @@ int main()
         {0, 0, 0, 1, 1}};
     cout << g.orangesRotting(grid) << endl;
 
+    // Time complexity: O(n*m)
+    // Space complexity: O(n*m)
+
     return 0;
 }
